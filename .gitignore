@@ -1,0 +1,12 @@
+*.db
+*.log
+__pycache__/
+venv/
+.idea/
+.vscode/
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.sln.dococ

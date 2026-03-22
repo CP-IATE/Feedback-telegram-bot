@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  kpi_bot:
+    build: .
+    container_name: kpi_support_bot
+    restart: always
+    environment:
+      - BOT_TOKEN=8629601314:AAEjGdLl6P1GIC96XSBCdQH3vncWBUfqtvc
+      - ADMIN_GROUP_ID=-1003705155118
+      - DB_PATH=data/supportBotDataBase.db
+    volumes:
+      - ./data:/app/data
