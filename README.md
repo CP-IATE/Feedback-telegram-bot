@@ -11,13 +11,15 @@
       -f docker/files/Dockerfile \
       -t sc-nniate-feedback-telegram-bot:latest \
       .
-    
+```
+```shell
     # launch container
     docker compose \
       -f docker/docker-compose.yml \
       --project-directory . \
       up -d
-
+```
+```shell
     # stop container
     docker compose \
       -f docker/docker-compose.yml \
