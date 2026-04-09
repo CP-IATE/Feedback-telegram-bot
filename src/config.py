@@ -1,0 +1,11 @@
+import os
+
+# �������� ����� �� �������, ���� ��� ����� � ������ ������ ������ ��� ������
+TOKEN = os.getenv("COMPOSE_BOT_TOKEN", "")
+ADMIN_GROUP_ID = int(os.getenv("COMPOSE_ADMIN_GROUP_ID", 0))
+
+# ��� ��������� ����� �������� � ����, ���� ��� �� ���������
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "kpi_power_2026")
+
+user_to_thread: dict = {}
+blacklist: set[int] = set()

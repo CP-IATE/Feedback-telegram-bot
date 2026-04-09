@@ -1,0 +1,28 @@
+version: '3.8'
+
+name: ${APP_GLOBAL_PREFIX}
+
+volumes:
+  volume-cache-feedback-bot-data:
+    driver: local
+    name: ${APP_GLOBAL_PREFIX}-feedback-bot-data
+
+services:
+  sc-nniate-feedback-bot:
+    container_name: feedback-bot
+    
+    image: sc-nniate-feedback-telegram-bot:latest
+    
+    restart: unless-stopped
+
+    command: tail -f /dev/null
+
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ADMIN_GROUP_ID=${ADMIN_GROUP_ID}
+      - DB_PATH=${DB_PATH}
+    
+    volumes:
+      - type: volume
+        source: volume-cache-feedback-bot-data
+        target: /opt/app/data

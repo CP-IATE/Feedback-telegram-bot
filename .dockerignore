@@ -1,6 +1,12 @@
+.idea/
+.vs/
+
 venv/
-.git/
 __pycache__/
+
+.git/
+
 *.db
 *.log
-.env
+
+.env*
