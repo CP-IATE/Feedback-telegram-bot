@@ -2,11 +2,14 @@ import sqlite3
 import os
 
 # База будет лежать в папке data, которую мы пробросим через Docker
-DATA_BASE_NAME = os.getenv("COMPOSE_DB_PATH", "data/supportBotDataBase.db")
+_DB_PATH=os.getenv("DB_PATH", "data/supportBotDataBase.db")
+DATA_BASE_NAME = f"../{_DB_PATH}"
 
 # Створення БД
 def create_db():
+    connection=None
     try:
+        os.makedirs(os.path.dirname(DATA_BASE_NAME), exist_ok=True)
         connection = sqlite3.connect(DATA_BASE_NAME)
         cursor = connection.cursor()
 

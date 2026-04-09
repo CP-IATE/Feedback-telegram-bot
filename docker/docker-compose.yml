@@ -1,5 +1,3 @@
-version: '3.8'
-
 name: ${APP_GLOBAL_PREFIX}
 
 volumes:
@@ -15,8 +13,6 @@ services:
     
     restart: unless-stopped
 
-    command: tail -f /dev/null
-
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
       - ADMIN_GROUP_ID=${ADMIN_GROUP_ID}
@@ -26,3 +22,4 @@ services:
       - type: volume
         source: volume-cache-feedback-bot-data
         target: /opt/app/data
+        consistency: delegated
